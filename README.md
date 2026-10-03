@@ -89,7 +89,7 @@ Visual Studio Code
 Git
 GitHub
 npm
-🏗️ System Architecture
+🏗️ System Architecture:
                     USER
                       |
                       ↓
