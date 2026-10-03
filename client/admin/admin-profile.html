@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Profile | LMS Admin</title>
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css"
+    >
+
+</head>
+
+
+<body class="admin-page">
+
+
+    <div class="app-layout">
+
+
+        <!-- =========================================
+             SIDEBAR
+        ========================================== -->
+
+        <aside class="sidebar">
+
+            <div class="sidebar-logo">
+
+                <h2>LMS</h2>
+
+                <span>
+                    Admin Panel
+                </span>
+
+            </div>
+
+
+            <nav class="sidebar-nav">
+
+                <a
+                    href="admin.html"
+                    class="nav-item"
+                >
+                    <span>
+                        Dashboard
+                    </span>
+                </a>
+
+
+                <a
+                    href="admin-courses.html"
+                    class="nav-item"
+                >
+                    <span>
+                        Courses
+                    </span>
+                </a>
+
+
+                <a
+                    href="admin-modules.html"
+                    class="nav-item"
+                >
+                    <span>
+                        Modules
+                    </span>
+                </a>
+
+
+                <a
+                    href="admin-assignments.html"
+                    class="nav-item"
+                >
+                    <span>
+                        Assignments
+                    </span>
+                </a>
+
+
+                <a
+                    href="admin-students.html"
+                    class="nav-item"
+                >
+                    <span>
+                        Students
+                    </span>
+                </a>
+
+
+                <a
+                    href="admin-submissions.html"
+                    class="nav-item"
+                >
+                    <span>
+                        Submissions
+                    </span>
+                </a>
+
+
+                <a
+                    href="admin-profile.html"
+                    class="nav-item active"
+                    id="profileNav"
+                >
+                    <span>
+                        Profile
+                    </span>
+                </a>
+
+            </nav>
+
+
+            <div class="sidebar-bottom">
+
+                <button
+                    type="button"
+                    class="nav-item logout-btn"
+                    id="logoutBtn"
+                >
+                    <span>
+                        Logout
+                    </span>
+                </button>
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- =========================================
+             MAIN CONTENT
+        ========================================== -->
+
+        <main class="main-content">
+
+
+            <!-- Page Header -->
+
+            <header class="page-header">
+
+                <div>
+
+                    <p class="page-eyebrow">
+                        ACCOUNT
+                    </p>
+
+                    <h1>
+                        Admin Profile
+                    </h1>
+
+                    <p class="page-description">
+                        View your administrator account information and manage your profile.
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="header-user"
+                    id="headerUser"
+                >
+                    Admin
+                </div>
+
+            </header>
+
+
+
+            <!-- =========================================
+                 PROFILE CONTENT
+            ========================================== -->
+
+            <section class="content-section">
+
+
+                <!-- Profile Card -->
+
+                <div class="admin-profile-card">
+
+
+                    <div class="admin-profile-header">
+
+
+                        <div
+                            class="admin-profile-avatar"
+                            id="profileAvatar"
+                        >
+                            A
+                        </div>
+
+
+                        <div class="admin-profile-heading">
+
+                            <p class="page-eyebrow">
+                                ADMINISTRATOR
+                            </p>
+
+                            <h2 id="profileName">
+                                Admin
+                            </h2>
+
+                            <p id="profileEmail">
+                                -
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- Account Information -->
+
+                    <div class="profile-section">
+
+
+                        <div class="profile-section-heading">
+
+                            <div>
+
+                                <h3>
+                                    Account Information
+                                </h3>
+
+                                <p>
+                                    Basic information associated with your LMS administrator account.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="profile-info-grid">
+
+
+                            <div class="profile-info-item">
+
+                                <span>
+                                    Full Name
+                                </span>
+
+                                <strong id="infoName">
+                                    -
+                                </strong>
+
+                            </div>
+
+
+                            <div class="profile-info-item">
+
+                                <span>
+                                    Email Address
+                                </span>
+
+                                <strong id="infoEmail">
+                                    -
+                                </strong>
+
+                            </div>
+
+
+                            <div class="profile-info-item">
+
+                                <span>
+                                    Account Role
+                                </span>
+
+                                <strong>
+                                    Administrator
+                                </strong>
+
+                            </div>
+
+
+                            <div class="profile-info-item">
+
+                                <span>
+                                    Account Status
+                                </span>
+
+                                <strong class="profile-status">
+                                    Active
+                                </strong>
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Security -->
+
+                    <div class="profile-section">
+
+
+                        <div class="profile-section-heading">
+
+                            <div>
+
+                                <h3>
+                                    Security
+                                </h3>
+
+                                <p>
+                                    Manage your administrator account security.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="security-card">
+
+
+                            <div>
+
+                                <strong>
+                                    Password
+                                </strong>
+
+                                <p>
+                                    For security, your password is stored securely and is not displayed here.
+                                </p>
+
+                            </div>
+
+
+                            <button
+                                type="button"
+                                class="btn btn-secondary"
+                                id="changePasswordBtn"
+                            >
+                                Change Password
+                            </button>
+
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Account Actions -->
+
+                    <div class="profile-section">
+
+
+                        <div class="profile-section-heading">
+
+                            <div>
+
+                                <h3>
+                                    Account Actions
+                                </h3>
+
+                                <p>
+                                    Sign out from the administrator account on this device.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            class="btn btn-danger"
+                            id="profileLogoutBtn"
+                        >
+                            Logout
+                        </button>
+
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+
+    <!-- =========================================
+         CHANGE PASSWORD MODAL
+    ========================================== -->
+
+    <div
+        class="modal-overlay"
+        id="passwordModal"
+        hidden
+    >
+
+        <div class="modal-card">
+
+
+            <div class="modal-header">
+
+                <div>
+
+                    <p class="page-eyebrow">
+                        SECURITY
+                    </p>
+
+                    <h2>
+                        Change Password
+                    </h2>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="modal-close"
+                    id="closePasswordModal"
+                    aria-label="Close"
+                >
+                    &times;
+                </button>
+
+            </div>
+
+
+
+            <form id="changePasswordForm">
+
+
+                <div class="modal-body">
+
+
+                    <div
+                        id="passwordMessage"
+                        class="message hidden"
+                    >
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="currentPassword">
+                            Current Password
+                        </label>
+
+                        <input
+                            type="password"
+                            id="currentPassword"
+                            name="currentPassword"
+                            required
+                            placeholder="Enter current password"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="newPassword">
+                            New Password
+                        </label>
+
+                        <input
+                            type="password"
+                            id="newPassword"
+                            name="newPassword"
+                            minlength="6"
+                            required
+                            placeholder="Enter new password"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="confirmPassword">
+                            Confirm New Password
+                        </label>
+
+                        <input
+                            type="password"
+                            id="confirmPassword"
+                            name="confirmPassword"
+                            minlength="6"
+                            required
+                            placeholder="Confirm new password"
+                        >
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="modal-actions">
+
+
+                    <button
+                        type="button"
+                        class="btn btn-secondary"
+                        id="cancelPasswordBtn"
+                    >
+                        Cancel
+                    </button>
+
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary"
+                        id="changePasswordSubmit"
+                    >
+                        Update Password
+                    </button>
+
+
+                </div>
+
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Scripts -->
+
+    <script src="../js/api.js"></script>
+
+    <script src="../js/ui.js"></script>
+
+    <script src="js/admin-profile.js"></script>
+
+
+</body>
+
+</html>

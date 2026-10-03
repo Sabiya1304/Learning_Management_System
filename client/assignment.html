@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Assignment | LMS</title>
+
+    <!-- Google Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- Global CSS -->
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+
+<body class="dashboard-body">
+
+<div class="app-layout">
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside
+        class="sidebar"
+        id="sidebar"
+    >
+
+        <!-- Logo -->
+
+        <div class="sidebar-logo">
+
+            <div class="logo-mark">
+                <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+
+            <span>LMS</span>
+
+        </div>
+
+
+        <!-- Navigation -->
+
+        <nav class="sidebar-nav">
+
+            <p class="nav-section-title">
+                MAIN
+            </p>
+
+
+            <a
+                href="student.html"
+                class="nav-item"
+            >
+
+                <i class="fa-solid fa-grid-2"></i>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <a
+                href="student.html"
+                class="nav-item"
+            >
+
+                <i class="fa-solid fa-book-open"></i>
+
+                <span>
+                    My Courses
+                </span>
+
+            </a>
+
+
+            <a
+                href="#"
+                class="nav-item active"
+            >
+
+                <i class="fa-solid fa-file-lines"></i>
+
+                <span>
+                    Assignments
+                </span>
+
+            </a>
+
+
+            <p class="nav-section-title">
+                ACCOUNT
+            </p>
+
+
+            <a
+                href="#"
+                class="nav-item"
+                id="profileNav"
+            >
+
+                <i class="fa-regular fa-user"></i>
+
+                <span>
+                    Profile
+                </span>
+
+            </a>
+
+
+            <a
+                href="#"
+                class="nav-item"
+                id="settingsNav"
+            >
+
+                <i class="fa-solid fa-gear"></i>
+
+                <span>
+                    Settings
+                </span>
+
+            </a>
+
+        </nav>
+
+
+        <!-- Sidebar Bottom -->
+
+        <div class="sidebar-bottom">
+
+
+            <div class="sidebar-help">
+
+                <div class="help-icon">
+
+                    <i class="fa-regular fa-circle-question"></i>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        Need help?
+                    </strong>
+
+                    <span>
+                        We're here for you.
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="logout-button"
+                id="logoutButton"
+            >
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                <span>
+                    Logout
+                </span>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- Mobile Overlay -->
+
+    <div
+        class="sidebar-overlay hidden"
+        id="sidebarOverlay"
+    ></div>
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main class="main-content">
+
+
+        <!-- =================================================
+             TOP HEADER
+        ================================================== -->
+
+        <header class="top-header">
+
+
+            <button
+                class="mobile-menu-button"
+                id="mobileMenuButton"
+            >
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+
+            <div class="header-actions">
+
+
+                <button class="icon-button">
+
+                    <i class="fa-regular fa-bell"></i>
+
+                </button>
+
+
+                <div class="user-menu">
+
+
+                    <div
+                        class="user-avatar"
+                        id="userAvatar"
+                    >
+                        S
+                    </div>
+
+
+                    <span id="headerUserName">
+                        Student
+                    </span>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =================================================
+             PAGE CONTENT
+        ================================================== -->
+
+        <div class="page-content">
+
+
+            <!-- =================================================
+                 BACK TO COURSE
+            ================================================== -->
+
+            <a
+                href="#"
+                class="assignment-back-link"
+                id="assignmentBackLink"
+            >
+
+                <i class="fa-solid fa-arrow-left"></i>
+
+                Back to Course
+
+            </a>
+
+
+            <!-- =================================================
+                 LOADING STATE
+            ================================================== -->
+
+            <div
+                id="assignmentLoading"
+                class="dashboard-loading"
+            >
+
+                <span class="spinner"></span>
+
+                <p>
+                    Loading assignment...
+                </p>
+
+            </div>
+
+
+            <!-- =================================================
+                 ASSIGNMENT PAGE
+            ================================================== -->
+
+            <div
+                id="assignmentPage"
+                class="hidden"
+            >
+
+
+                <!-- =================================================
+                     ASSIGNMENT HERO
+                ================================================== -->
+
+                <section
+                    class="assignment-hero"
+                    id="assignmentHero"
+                >
+
+                    <!--
+                        Assignment information is inserted
+                        dynamically by assignment.js
+                    -->
+
+                </section>
+
+
+                <!-- =================================================
+                     MAIN ASSIGNMENT LAYOUT
+                ================================================== -->
+
+                <div class="assignment-layout">
+
+
+                    <!-- =================================================
+                         LEFT CONTENT
+                    ================================================== -->
+
+                    <div class="assignment-main">
+
+
+                        <!-- =================================================
+                             OVERVIEW
+                        ================================================== -->
+
+                        <section class="dashboard-card assignment-section">
+
+
+                            <div class="assignment-section-header">
+
+
+                                <div class="assignment-section-icon">
+
+                                    <i class="fa-solid fa-circle-info"></i>
+
+                                </div>
+
+
+                                <div>
+
+                                    <h2>
+                                        Assignment Overview
+                                    </h2>
+
+                                    <p>
+                                        Understand what this assignment is about.
+                                    </p>
+
+                                </div>
+
+
+                            </div>
+
+
+                            <div
+                                id="assignmentDescription"
+                                class="assignment-description"
+                            >
+                            </div>
+
+
+                        </section>
+
+
+                        <!-- =================================================
+                             INSTRUCTIONS
+                        ================================================== -->
+
+                        <section class="dashboard-card assignment-section">
+
+
+                            <div class="assignment-section-header">
+
+
+                                <div class="assignment-section-icon">
+
+                                    <i class="fa-solid fa-list-check"></i>
+
+                                </div>
+
+
+                                <div>
+
+                                    <h2>
+                                        Instructions
+                                    </h2>
+
+                                    <p>
+                                        Read the requirements carefully before starting.
+                                    </p>
+
+                                </div>
+
+
+                            </div>
+
+
+                            <div
+                                id="assignmentInstructions"
+                                class="assignment-instructions"
+                            >
+                            </div>
+
+
+                        </section>
+
+
+                        <!-- =================================================
+                             SUBMISSION
+                        ================================================== -->
+
+                        <section
+                            class="dashboard-card assignment-section"
+                            id="submissionSection"
+                        >
+
+
+                            <div class="assignment-section-header">
+
+
+                                <div class="assignment-section-icon">
+
+                                    <i class="fa-solid fa-paper-plane"></i>
+
+                                </div>
+
+
+                                <div>
+
+                                    <h2 id="submissionTitle">
+                                        Submit Your Assignment
+                                    </h2>
+
+                                    <p id="submissionSubtitle">
+                                        Upload or share your work before the deadline.
+                                    </p>
+
+                                </div>
+
+
+                            </div>
+
+
+                            <!-- Submission Message -->
+
+                            <div
+                                id="submissionMessage"
+                                class="message hidden"
+                            ></div>
+
+
+                            <!-- =================================================
+                                 SUBMISSION FORM
+                            ================================================== -->
+
+                            <form
+                                id="submissionForm"
+                                class="assignment-form"
+                            >
+
+
+                                <!-- Description -->
+
+                                <div class="form-group">
+
+
+                                    <label for="submissionText">
+
+                                        <i class="fa-regular fa-pen-to-square"></i>
+
+                                        Your Submission
+
+                                    </label>
+
+
+                                    <textarea
+                                        id="submissionText"
+                                        rows="6"
+                                        placeholder="Describe your work or write any important submission details..."
+                                    ></textarea>
+
+
+                                </div>
+
+
+                                <!-- GitHub -->
+
+                                <div class="form-group">
+
+
+                                    <label for="githubLink">
+
+                                        <i class="fa-brands fa-github"></i>
+
+                                        GitHub Repository
+
+                                        <span class="optional-label">
+                                            Optional
+                                        </span>
+
+                                    </label>
+
+
+                                    <input
+                                        type="url"
+                                        id="githubLink"
+                                        placeholder="https://github.com/username/project"
+                                    >
+
+
+                                </div>
+
+
+                                <!-- Google Drive -->
+
+                                <div class="form-group">
+
+
+                                    <label for="driveLink">
+
+                                        <i class="fa-brands fa-google-drive"></i>
+
+                                        Google Drive
+
+                                        <span class="optional-label">
+                                            Optional
+                                        </span>
+
+                                    </label>
+
+
+                                    <input
+                                        type="url"
+                                        id="driveLink"
+                                        placeholder="https://drive.google.com/..."
+                                    >
+
+
+                                </div>
+
+
+                                <!-- Project URL -->
+
+                                <div class="form-group">
+
+
+                                    <label for="projectUrl">
+
+                                        <i class="fa-solid fa-globe"></i>
+
+                                        Project URL
+
+                                        <span class="optional-label">
+                                            Optional
+                                        </span>
+
+                                    </label>
+
+
+                                    <input
+                                        type="url"
+                                        id="projectUrl"
+                                        placeholder="https://your-project.com"
+                                    >
+
+
+                                </div>
+
+
+                                <!-- File URL -->
+
+                                <div class="form-group">
+
+
+                                    <label for="fileUrl">
+
+                                        <i class="fa-solid fa-link"></i>
+
+                                        File URL
+
+                                        <span class="optional-label">
+                                            Optional
+                                        </span>
+
+                                    </label>
+
+
+                                    <input
+                                        type="url"
+                                        id="fileUrl"
+                                        placeholder="Link to your uploaded assignment file"
+                                    >
+
+
+                                </div>
+
+
+                                <!-- Submit Button -->
+
+                                <div class="assignment-submit-area">
+
+
+                                    <div class="submission-note">
+
+                                        <i class="fa-solid fa-shield-halved"></i>
+
+                                        <span>
+                                            Make sure your submission is complete before submitting.
+                                        </span>
+
+                                    </div>
+
+
+                                    <button
+                                        type="submit"
+                                        class="btn btn-primary assignment-submit-button"
+                                        id="submitAssignmentButton"
+                                    >
+
+                                        <i class="fa-solid fa-paper-plane"></i>
+
+                                        Submit Assignment
+
+                                    </button>
+
+
+                                </div>
+
+
+                            </form>
+
+
+                            <!-- =================================================
+                                 EXISTING SUBMISSION
+                            ================================================== -->
+
+                            <div
+                                id="existingSubmission"
+                                class="hidden"
+                            >
+
+                            </div>
+
+
+                        </section>
+
+
+                    </div>
+
+
+                    <!-- =================================================
+                         RIGHT SIDEBAR
+                    ================================================== -->
+
+                    <aside class="assignment-sidebar">
+
+
+                        <!-- =================================================
+                             ASSIGNMENT DETAILS
+                        ================================================== -->
+
+                        <section class="dashboard-card assignment-details-card">
+
+
+                            <div class="assignment-sidebar-title">
+
+                                <div class="assignment-sidebar-title-icon">
+
+                                    <i class="fa-solid fa-circle-info"></i>
+
+                                </div>
+
+                                <div>
+
+                                    <h3>
+                                        Assignment Details
+                                    </h3>
+
+                                    <p>
+                                        Important information
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- Deadline -->
+
+                            <div class="assignment-detail-row">
+
+
+                                <div class="assignment-detail-icon">
+
+                                    <i class="fa-regular fa-calendar"></i>
+
+                                </div>
+
+
+                                <div>
+
+                                    <span>
+                                        Deadline
+                                    </span>
+
+                                    <strong id="assignmentDeadline">
+                                        -
+                                    </strong>
+
+                                </div>
+
+
+                            </div>
+
+
+                            <!-- Marks -->
+
+                            <div class="assignment-detail-row">
+
+
+                                <div class="assignment-detail-icon">
+
+                                    <i class="fa-solid fa-star"></i>
+
+                                </div>
+
+
+                                <div>
+
+                                    <span>
+                                        Maximum Marks
+                                    </span>
+
+                                    <strong id="assignmentMarks">
+                                        -
+                                    </strong>
+
+                                </div>
+
+
+                            </div>
+
+
+                            <!-- Status -->
+
+                            <div class="assignment-detail-row">
+
+
+                                <div class="assignment-detail-icon">
+
+                                    <i class="fa-solid fa-circle-check"></i>
+
+                                </div>
+
+
+                                <div>
+
+                                    <span>
+                                        Submission Status
+                                    </span>
+
+                                    <strong
+                                        id="assignmentStatus"
+                                        class="assignment-status-text"
+                                    >
+                                        Not Submitted
+                                    </strong>
+
+                                </div>
+
+
+                            </div>
+
+
+                        </section>
+
+
+                        <!-- =================================================
+                             COURSE CARD
+                        ================================================== -->
+
+                        <section class="dashboard-card assignment-course-card">
+
+
+                            <span class="assignment-course-label">
+                                COURSE
+                            </span>
+
+
+                            <div class="assignment-course-icon">
+
+                                <i class="fa-solid fa-book-open"></i>
+
+                            </div>
+
+
+                            <h3 id="assignmentCourse">
+                                -
+                            </h3>
+
+
+                            <p>
+                                Continue learning and complete the related course modules.
+                            </p>
+
+
+                            <a
+                                href="#"
+                                id="courseLink"
+                                class="assignment-course-link"
+                            >
+
+                                View Course
+
+                                <i class="fa-solid fa-arrow-right"></i>
+
+                            </a>
+
+
+                        </section>
+
+
+                    </aside>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </main>
+
+</div>
+
+
+<!-- =====================================================
+     SUCCESS MODAL
+====================================================== -->
+
+<div
+    class="modal-overlay hidden"
+    id="successModal"
+>
+
+
+    <div class="success-modal">
+
+
+        <div class="success-icon">
+
+            <i class="fa-solid fa-check"></i>
+
+        </div>
+
+
+        <h2 id="successTitle">
+            Assignment Submitted!
+        </h2>
+
+
+        <p id="successMessage">
+            Your assignment has been submitted successfully.
+        </p>
+
+
+        <button
+            class="btn btn-primary"
+            onclick="hideSuccessModal()"
+        >
+
+            Continue
+
+        </button>
+
+
+    </div>
+
+
+</div>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+====================================================== -->
+
+<script src="js/api.js"></script>
+
+<script src="js/ui.js"></script>
+
+<script src="js/assignment.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Profile - LMS</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="app-layout">
+
+        <!-- ================= SIDEBAR ================= -->
+        <aside class="sidebar">
+
+            <div class="sidebar-header">
+                <div class="logo">
+                    LMS
+                </div>
+
+                <div class="sidebar-title">
+                    Learning Management System
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+
+                <a href="student.html" class="nav-item">
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="courses.html" class="nav-item">
+                    <span>All Courses</span>
+                </a>
+
+                <a href="my-courses.html" class="nav-item">
+                    <span>My Courses</span>
+                </a>
+
+                <a href="assignments.html" class="nav-item">
+                    <span>Assignments</span>
+                </a>
+
+                <a href="profile.html" class="nav-item active">
+                    <span>Profile</span>
+                </a>
+
+                <a href="settings.html" class="nav-item">
+                    <span>Settings</span>
+                </a>
+
+            </nav>
+
+            <div class="sidebar-footer">
+
+                <button id="logoutBtn" class="logout-btn">
+                    Logout
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- ================= MAIN CONTENT ================= -->
+
+        <main class="main-content">
+
+            <!-- Header -->
+
+            <header class="page-header">
+
+                <div>
+                    <h1>My Profile</h1>
+
+                    <p>
+                        View and manage your account information.
+                    </p>
+                </div>
+
+            </header>
+
+
+            <!-- ================= PROFILE CONTENT ================= -->
+
+            <section class="profile-page">
+
+                <!-- Profile Card -->
+
+                <div class="profile-card">
+
+                    <div class="profile-avatar" id="profileAvatar">
+                        S
+                    </div>
+
+                    <div class="profile-main-info">
+
+                        <h2 id="profileName">
+                            Student Name
+                        </h2>
+
+                        <p id="profileEmail">
+                            student@example.com
+                        </p>
+
+                        <span class="profile-role">
+                            Student
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Personal Information -->
+
+                <div class="profile-section">
+
+                    <div class="section-header">
+
+                        <div>
+                            <h2>Personal Information</h2>
+
+                            <p>
+                                Your basic account information.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="profile-info-grid">
+
+                        <div class="profile-info-item">
+
+                            <label>Full Name</label>
+
+                            <div id="fullName">
+                                -
+                            </div>
+
+                        </div>
+
+
+                        <div class="profile-info-item">
+
+                            <label>Email Address</label>
+
+                            <div id="emailAddress">
+                                -
+                            </div>
+
+                        </div>
+
+
+                        <div class="profile-info-item">
+
+                            <label>Account Role</label>
+
+                            <div id="accountRole">
+                                Student
+                            </div>
+
+                        </div>
+
+
+                        <div class="profile-info-item">
+
+                            <label>Student ID</label>
+
+                            <div id="studentId">
+                                -
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Account Information -->
+
+                <div class="profile-section">
+
+                    <div class="section-header">
+
+                        <div>
+                            <h2>Account Information</h2>
+
+                            <p>
+                                Information about your LMS account.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="profile-info-grid">
+
+                        <div class="profile-info-item">
+
+                            <label>Account Status</label>
+
+                            <div>
+                                <span class="status-active">
+                                    Active
+                                </span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="profile-info-item">
+
+                            <label>Member Since</label>
+
+                            <div id="memberSince">
+                                -
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Change Password -->
+
+                <div class="profile-section">
+
+                    <div class="section-header">
+
+                        <div>
+                            <h2>Change Password</h2>
+
+                            <p>
+                                Update your password to keep your account secure.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <form id="passwordForm" class="password-form">
+
+                        <div class="form-group">
+
+                            <label for="currentPassword">
+                                Current Password
+                            </label>
+
+                            <input
+                                type="password"
+                                id="currentPassword"
+                                placeholder="Enter current password"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="newPassword">
+                                New Password
+                            </label>
+
+                            <input
+                                type="password"
+                                id="newPassword"
+                                placeholder="Enter new password"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="confirmPassword">
+                                Confirm New Password
+                            </label>
+
+                            <input
+                                type="password"
+                                id="confirmPassword"
+                                placeholder="Confirm new password"
+                            >
+
+                        </div>
+
+
+                        <button
+                            type="submit"
+                            class="primary-btn"
+                        >
+                            Update Password
+                        </button>
+
+                    </form>
+
+                    <p id="passwordMessage" class="form-message"></p>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- JavaScript -->
+
+    <script src="js/api.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/profile.js"></script>
+
+</body>
+
+</html>

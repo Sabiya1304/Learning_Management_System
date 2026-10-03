@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Students | LMS Admin</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="admin-page">
+
+    <div class="app-layout">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <div class="sidebar-logo">
+                <h2>LMS</h2>
+                <span>Admin Panel</span>
+            </div>
+
+            <nav class="sidebar-nav">
+
+                <a href="admin.html" class="nav-item">
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="admin-courses.html" class="nav-item">
+                    <span>Courses</span>
+                </a>
+
+                <a href="admin-modules.html" class="nav-item">
+                    <span>Modules</span>
+                </a>
+
+                <a href="admin-assignments.html" class="nav-item">
+                    <span>Assignments</span>
+                </a>
+
+                <a href="admin-students.html" class="nav-item active">
+                    <span>Students</span>
+                </a>
+
+                <a href="admin-submissions.html" class="nav-item" id="submissionsNav">
+                    <span>Submissions</span>
+                </a>
+
+                <a href="admin-profile.html" class="nav-item" id="profileNav">
+                    <span>Profile</span>
+                </a>
+
+            </nav>
+
+            <div class="sidebar-bottom">
+
+                <button
+                    type="button"
+                    class="nav-item logout-btn"
+                    id="logoutBtn"
+                >
+                    <span>Logout</span>
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <!-- Page Header -->
+            <header class="page-header">
+
+                <div>
+
+                    <p class="page-eyebrow">
+                        ADMINISTRATION
+                    </p>
+
+                    <h1>
+                        Students
+                    </h1>
+
+                    <p class="page-description">
+                        View and manage registered students and their learning progress.
+                    </p>
+
+                </div>
+
+                <div
+                    class="header-user"
+                    id="headerUser"
+                >
+                    Admin
+                </div>
+
+            </header>
+
+
+            <!-- Content -->
+            <section class="content-section">
+
+
+                <!-- Statistics -->
+                <div class="student-stats">
+
+                    <div class="student-stat-card">
+
+                        <div class="student-stat-label">
+                            Total Students
+                        </div>
+
+                        <div
+                            class="student-stat-value"
+                            id="totalStudents"
+                        >
+                            0
+                        </div>
+
+                    </div>
+
+
+                    <div class="student-stat-card">
+
+                        <div class="student-stat-label">
+                            Enrolled Students
+                        </div>
+
+                        <div
+                            class="student-stat-value"
+                            id="enrolledStudents"
+                        >
+                            0
+                        </div>
+
+                    </div>
+
+
+                    <div class="student-stat-card">
+
+                        <div class="student-stat-label">
+                            Not Enrolled
+                        </div>
+
+                        <div
+                            class="student-stat-value"
+                            id="notEnrolledStudents"
+                        >
+                            0
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Students Section -->
+                <div class="section-heading">
+
+                    <div>
+
+                        <h2>
+                            Registered Students
+                        </h2>
+
+                        <p>
+                            View student accounts, enrolled courses and progress.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Loading -->
+                <div
+                    id="studentsLoading"
+                    class="loading-state"
+                >
+                    Loading students...
+                </div>
+
+
+                <!-- Students Container -->
+                <div
+                    id="studentsContainer"
+                    class="students-container hidden"
+                >
+                </div>
+
+
+                <!-- Empty State -->
+                <div
+                    id="studentsEmpty"
+                    class="empty-state hidden"
+                >
+
+                    <h3>
+                        No students found
+                    </h3>
+
+                    <p>
+                        No student accounts are registered yet.
+                    </p>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- Student Details Modal -->
+    <div
+        class="modal-overlay"
+        id="studentModal"
+        hidden
+    >
+
+        <div class="modal-card student-modal-card">
+
+            <div class="modal-header">
+
+                <div>
+
+                    <p class="page-eyebrow">
+                        STUDENT DETAILS
+                    </p>
+
+                    <h2 id="studentModalName">
+                        Student
+                    </h2>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="modal-close"
+                    id="closeStudentModal"
+                    aria-label="Close"
+                >
+                    &times;
+                </button>
+
+            </div>
+
+
+            <div class="student-detail-info">
+
+                <div class="student-detail-row">
+
+                    <span>
+                        Email
+                    </span>
+
+                    <strong id="studentModalEmail">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="student-detail-row">
+
+                    <span>
+                        Registration Date
+                    </span>
+
+                    <strong id="studentModalDate">
+                        -
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="student-courses-section">
+
+                <h3>
+                    Enrolled Courses
+                </h3>
+
+                <div
+                    id="studentModalCourses"
+                    class="student-modal-courses"
+                >
+                </div>
+
+            </div>
+
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="btn btn-secondary"
+                    id="closeStudentModalBtn"
+                >
+                    Close
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Scripts -->
+    <script src="../js/api.js"></script>
+    <script src="../js/ui.js"></script>
+    <script src="js/admin-students.js"></script>
+
+</body>
+</html>

@@ -5,7 +5,7 @@ const generateToken = require("../utils/generateToken");
 // Register
 const registerUser = async (req, res) => {
     try {
-        const { name, email, password, role } = req.body;
+        const { name, email, password } = req.body;
 
         // Validate required fields
         if (!name || !email || !password) {
@@ -33,7 +33,7 @@ const registerUser = async (req, res) => {
             name,
             email,
             password: hashedPassword,
-            role: role || "student"
+            role: "student"
         });
 
         res.status(201).json({

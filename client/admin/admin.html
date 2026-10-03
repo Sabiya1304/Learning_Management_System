@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard | LMS</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="admin-page">
+
+    <div class="app-layout">
+
+        <!-- ================= SIDEBAR ================= -->
+
+        <aside class="sidebar">
+
+            <div class="sidebar-logo">
+                <h2>LMS</h2>
+                <span>Admin Panel</span>
+            </div>
+
+            <nav class="sidebar-nav">
+
+                <a href="admin.html" class="nav-item active">
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="admin-courses.html" class="nav-item">
+                    <span>Courses</span>
+                </a>
+
+                <a href="admin-modules.html" class="nav-item">
+                    <span>Modules</span>
+                </a>
+
+                <a href="admin-assignments.html" class="nav-item">
+                    <span>Assignments</span>
+                </a>
+
+                <a href="admin-students.html" class="nav-item">
+                    <span>Students</span>
+                </a>
+
+                <a href="admin-submissions.html" class="nav-item">
+                    <span>Submissions</span>
+                </a>
+
+                <a href="admin-profile.html" class="nav-item" id="profileNav">
+                    <span>Profile</span>
+                </a>
+
+            </nav>
+
+            <div class="sidebar-bottom">
+
+                <button
+                    type="button"
+                    class="nav-item logout-btn"
+                    id="logoutBtn"
+                >
+                    <span>Logout</span>
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- ================= MAIN CONTENT ================= -->
+
+        <main class="main-content">
+
+            <!-- Page Header -->
+
+            <header class="page-header">
+
+                <div>
+
+                    <p class="page-eyebrow">
+                        ADMINISTRATION
+                    </p>
+
+                    <h1>
+                        Dashboard
+                    </h1>
+
+                    <p class="page-description">
+                        Manage your LMS and monitor learning activity from one place.
+                    </p>
+
+                </div>
+
+                <div
+                    class="header-user"
+                    id="headerUser"
+                >
+                    LMS Admin
+                </div>
+
+            </header>
+
+
+            <!-- ================= WELCOME ================= -->
+
+            <section class="admin-welcome-card">
+
+                <div>
+
+                    <p class="admin-welcome-label">
+                        Welcome back
+                    </p>
+
+                    <h2 id="welcomeName">
+                        LMS Admin
+                    </h2>
+
+                    <p>
+                        Manage courses, assignments and student learning progress.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= STATISTICS ================= -->
+
+            <section class="admin-stats">
+
+                <!-- Courses -->
+
+                <div class="admin-stat-card">
+
+                    <div class="admin-stat-content">
+
+                        <span class="admin-stat-label">
+                            Total Courses
+                        </span>
+
+                        <strong
+                            id="totalCourses"
+                            class="admin-stat-value"
+                        >
+                            0
+                        </strong>
+
+                    </div>
+
+                    <span class="admin-stat-icon">
+                        C
+                    </span>
+
+                </div>
+
+
+                <!-- Students -->
+
+                <div class="admin-stat-card">
+
+                    <div class="admin-stat-content">
+
+                        <span class="admin-stat-label">
+                            Total Students
+                        </span>
+
+                        <strong
+                            id="totalStudents"
+                            class="admin-stat-value"
+                        >
+                            0
+                        </strong>
+
+                    </div>
+
+                    <span class="admin-stat-icon">
+                        S
+                    </span>
+
+                </div>
+
+
+                <!-- Assignments -->
+
+                <div class="admin-stat-card">
+
+                    <div class="admin-stat-content">
+
+                        <span class="admin-stat-label">
+                            Total Assignments
+                        </span>
+
+                        <strong
+                            id="totalAssignments"
+                            class="admin-stat-value"
+                        >
+                            0
+                        </strong>
+
+                    </div>
+
+                    <span class="admin-stat-icon">
+                        A
+                    </span>
+
+                </div>
+
+
+                <!-- Submissions -->
+
+                <div class="admin-stat-card">
+
+                    <div class="admin-stat-content">
+
+                        <span class="admin-stat-label">
+                            Pending Submissions
+                        </span>
+
+                        <strong
+                            id="pendingSubmissions"
+                            class="admin-stat-value"
+                        >
+                            0
+                        </strong>
+
+                    </div>
+
+                    <span class="admin-stat-icon">
+                        P
+                    </span>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= QUICK ACTIONS ================= -->
+
+            <section class="admin-dashboard-section">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <h2>
+                            Quick Actions
+                        </h2>
+
+                        <p>
+                            Quickly access the most common admin tasks.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="admin-quick-actions">
+
+                    <a
+                        href="admin-courses.html"
+                        class="admin-action-card"
+                    >
+
+                        <div class="admin-action-icon">
+                            +
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Manage Courses
+                            </h3>
+
+                            <p>
+                                Create and manage your LMS courses.
+                            </p>
+
+                        </div>
+
+                    </a>
+
+
+                    <a
+                        href="admin-modules.html"
+                        class="admin-action-card"
+                    >
+
+                        <div class="admin-action-icon">
+                            +
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Manage Modules
+                            </h3>
+
+                            <p>
+                                Add and organize course modules.
+                            </p>
+
+                        </div>
+
+                    </a>
+
+
+                    <a
+                        href="admin-assignments.html"
+                        class="admin-action-card"
+                    >
+
+                        <div class="admin-action-icon">
+                            +
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Manage Assignments
+                            </h3>
+
+                            <p>
+                                Create and manage student assignments.
+                            </p>
+
+                        </div>
+
+                    </a>
+
+
+                    <a
+                        href="admin-students.html"
+                        class="admin-action-card"
+                    >
+
+                        <div class="admin-action-icon">
+                            →
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                View Students
+                            </h3>
+
+                            <p>
+                                Monitor students and their progress.
+                            </p>
+
+                        </div>
+
+                    </a>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= RECENT ACTIVITY ================= -->
+
+            <section class="admin-dashboard-section">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <h2>
+                            LMS Overview
+                        </h2>
+
+                        <p>
+                            A quick overview of your learning platform.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="admin-overview-card">
+
+                    <div class="admin-overview-item">
+
+                        <span>
+                            Course Management
+                        </span>
+
+                        <strong>
+                            Manage
+                        </strong>
+
+                    </div>
+
+
+                    <div class="admin-overview-item">
+
+                        <span>
+                            Module Management
+                        </span>
+
+                        <strong>
+                            Manage
+                        </strong>
+
+                    </div>
+
+
+                    <div class="admin-overview-item">
+
+                        <span>
+                            Assignment Management
+                        </span>
+
+                        <strong>
+                            Manage
+                        </strong>
+
+                    </div>
+
+
+                    <div class="admin-overview-item">
+
+                        <span>
+                            Student Monitoring
+                        </span>
+
+                        <strong>
+                            View
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="../js/api.js"></script>
+    <script src="../js/ui.js"></script>
+    <script src="js/admin.js"></script>
+
+</body>
+</html>

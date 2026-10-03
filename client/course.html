@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Course | LMS</title>
+
+    <!-- Inter Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="dashboard-body">
+
+    <div class="app-layout">
+
+        <!-- =========================
+             SIDEBAR
+        ========================== -->
+
+        <aside class="sidebar" id="sidebar">
+
+            <div class="sidebar-logo">
+
+                <div class="logo-mark">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+
+                <span>LMS</span>
+
+            </div>
+
+
+            <nav class="sidebar-nav">
+
+                <p class="nav-section-title">
+                    MAIN
+                </p>
+
+                <a
+                    href="student.html"
+                    class="nav-item"
+                >
+                    <i class="fa-solid fa-grid-2"></i>
+                    <span>Dashboard</span>
+                </a>
+
+                <a
+                    href="courses.html"
+                    class="nav-item active"
+                    id="myCoursesNav"
+                >
+                    <i class="fa-solid fa-book-open"></i>
+                    <span>My Courses</span>
+                </a>
+
+                <a
+                    href="assignments.html"
+                    class="nav-item"
+                    id="assignmentsNav"
+                >
+                    <i class="fa-solid fa-file-lines"></i>
+                    <span>Assignments</span>
+                </a>
+
+
+                <p class="nav-section-title">
+                    ACCOUNT
+                </p>
+
+                <a
+                    href="profile.html"
+                    class="nav-item"
+                    id="profileNav"
+                >
+                    <i class="fa-regular fa-user"></i>
+                    <span>Profile</span>
+                </a>
+
+                <a
+                    href="settings.html"
+                    class="nav-item"
+                    id="settingsNav"
+                >
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Settings</span>
+                </a>
+
+            </nav>
+
+
+            <div class="sidebar-bottom">
+
+                <div class="sidebar-help">
+
+                    <div class="help-icon">
+                        <i class="fa-regular fa-circle-question"></i>
+                    </div>
+
+                    <div>
+                        <strong>Need help?</strong>
+                        <span>We're here for you.</span>
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="logout-button"
+                    id="logoutButton"
+                >
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Logout</span>
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- Mobile overlay -->
+
+        <div
+            class="sidebar-overlay hidden"
+            id="sidebarOverlay"
+        ></div>
+
+
+        <!-- =========================
+             MAIN CONTENT
+        ========================== -->
+
+        <main class="main-content">
+
+            <!-- Top Header -->
+
+            <header class="top-header">
+
+                <button
+                    class="mobile-menu-button"
+                    id="mobileMenuButton"
+                >
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+
+                <div class="header-actions">
+
+                    <button class="icon-button">
+                        <i class="fa-regular fa-bell"></i>
+                    </button>
+
+
+                    <div class="user-menu">
+
+                        <div
+                            class="user-avatar"
+                            id="userAvatar"
+                        >
+                            S
+                        </div>
+
+                        <span id="headerUserName">
+                            Student
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- Page Content -->
+
+            <div class="page-content">
+
+                <!-- Back -->
+
+                <a
+                    href="student.html"
+                    class="course-back-link"
+                >
+                    <i class="fa-solid fa-arrow-left"></i>
+                    Back to Dashboard
+                </a>
+
+
+                <!-- Course Hero -->
+
+                <section
+                    class="course-hero"
+                    id="courseHero"
+                >
+
+                    <div class="course-hero-loading">
+
+                        <span class="spinner"></span>
+
+                        <p>
+                            Loading course...
+                        </p>
+
+                    </div>
+
+                </section>
+
+
+                <!-- Course Content -->
+
+                <section class="course-learning-layout">
+
+                    <!-- Left: Modules -->
+
+                    <div class="course-main-card dashboard-card">
+
+                        <div class="card-header">
+
+                            <div>
+                                <h2>Course Content</h2>
+
+                                <p>
+                                    Complete each module to
+                                    make progress.
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <div
+                            id="moduleContainer"
+                            class="module-container"
+                        >
+
+                            <div class="dashboard-loading">
+
+                                <span class="spinner"></span>
+
+                                <p>
+                                    Loading modules...
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Right: Progress -->
+
+                    <aside class="course-sidebar-card">
+
+                        <div class="dashboard-card">
+
+                            <div class="course-progress-header">
+
+                                <div>
+
+                                    <span class="course-progress-label">
+                                        Your Progress
+                                    </span>
+
+                                    <strong
+                                        id="courseProgress"
+                                    >
+                                        0%
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="progress-bar">
+
+                                <div
+                                    class="progress-fill"
+                                    id="courseProgressBar"
+                                    style="width: 0%"
+                                ></div>
+
+                            </div>
+
+
+                            <p
+                                class="course-progress-text"
+                                id="progressText"
+                            >
+                                Loading progress...
+                            </p>
+
+                        </div>
+
+
+                        <!-- Assignment Card -->
+
+                        <div
+                            class="dashboard-card"
+                            id="assignmentCard"
+                        >
+
+                            <div class="card-header">
+
+                                <div>
+                                    <h3>Assignments</h3>
+
+                                    <p>
+                                        Course assignments
+                                    </p>
+                                </div>
+
+                            </div>
+
+
+                            <div
+                                id="courseAssignmentContainer"
+                            >
+
+                                <div class="dashboard-loading">
+
+                                    <span class="spinner"></span>
+
+                                    <p>
+                                        Loading assignments...
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </aside>
+
+                </section>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <!-- =========================
+         SUCCESS MODAL
+    ========================== -->
+
+    <div
+        class="modal-overlay hidden"
+        id="successModal"
+    >
+
+        <div class="success-modal">
+
+            <div class="success-icon">
+
+                <i class="fa-solid fa-check"></i>
+
+            </div>
+
+            <h2 id="successTitle">
+                Success!
+            </h2>
+
+            <p id="successMessage">
+                Action completed successfully.
+            </p>
+
+            <button
+                class="btn btn-primary"
+                onclick="hideSuccessModal()"
+            >
+                Continue
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- Scripts -->
+
+    <script src="js/api.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/course.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="LMS Student Settings"
+    >
+
+    <title>LMS | Settings</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+</head>
+
+
+<body class="dashboard-body">
+
+
+    <!-- =====================================================
+         APP LAYOUT
+         ===================================================== -->
+
+    <div class="app-layout">
+
+
+        <!-- =================================================
+             SIDEBAR
+             ================================================= -->
+
+        <aside
+            class="sidebar"
+            id="sidebar"
+        >
+
+            <!-- Logo -->
+
+            <div class="sidebar-logo">
+
+                <div class="logo-mark">
+
+                    <i class="fa-solid fa-graduation-cap"></i>
+
+                </div>
+
+                <span>LMS</span>
+
+            </div>
+
+
+            <!-- Navigation -->
+
+            <nav class="sidebar-nav">
+
+                <p class="nav-section-title">
+                    MAIN
+                </p>
+
+
+                <a
+                    href="student.html"
+                    class="nav-item"
+                >
+
+                    <i class="fa-solid fa-grid-2"></i>
+
+                    <span>
+                        Dashboard
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="my-courses.html"
+                    class="nav-item"
+                >
+
+                    <i class="fa-solid fa-book-open"></i>
+
+                    <span>
+                        My Courses
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="assignments.html"
+                    class="nav-item"
+                >
+
+                    <i class="fa-solid fa-file-lines"></i>
+
+                    <span>
+                        Assignments
+                    </span>
+
+                </a>
+
+
+                <p class="nav-section-title nav-section-spaced">
+                    ACCOUNT
+                </p>
+
+
+                <a
+                    href="profile.html"
+                    class="nav-item"
+                >
+
+                    <i class="fa-regular fa-user"></i>
+
+                    <span>
+                        Profile
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="settings.html"
+                    class="nav-item active"
+                >
+
+                    <i class="fa-solid fa-gear"></i>
+
+                    <span>
+                        Settings
+                    </span>
+
+                </a>
+
+            </nav>
+
+
+            <!-- Sidebar Bottom -->
+
+            <div class="sidebar-bottom">
+
+                <div class="sidebar-help">
+
+                    <div class="help-icon">
+
+                        <i class="fa-regular fa-circle-question"></i>
+
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Need help?
+                        </strong>
+
+                        <span>
+                            We're here for you.
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="logout-button"
+                    id="logoutButton"
+                >
+
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+
+                    <span>
+                        Logout
+                    </span>
+
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- =================================================
+             MAIN CONTENT
+             ================================================= -->
+
+        <main class="main-content">
+
+
+            <!-- Top Header -->
+
+            <header class="top-header">
+
+                <button
+                    class="mobile-menu-button"
+                    id="mobileMenuButton"
+                    aria-label="Open menu"
+                >
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+
+                <div class="header-spacer"></div>
+
+
+                <div class="header-actions">
+
+                    <button
+                        class="icon-button"
+                        id="notificationButton"
+                        aria-label="Notifications"
+                    >
+
+                        <i class="fa-regular fa-bell"></i>
+
+                        <span class="notification-dot"></span>
+
+                    </button>
+
+
+                    <div class="user-menu">
+
+                        <div
+                            class="user-avatar"
+                            id="userAvatar"
+                        >
+                            S
+                        </div>
+
+                        <div class="user-info">
+
+                            <strong id="headerUserName">
+                                Student
+                            </strong>
+
+                            <span>
+                                Student
+                            </span>
+
+                        </div>
+
+                        <i class="fa-solid fa-chevron-down user-chevron"></i>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- =================================================
+                 PAGE CONTENT
+                 ================================================= -->
+
+            <div class="page-content">
+
+
+                <!-- Page Heading -->
+
+                <section class="settings-header">
+
+                    <p class="welcome-label">
+                        ACCOUNT SETTINGS
+                    </p>
+
+                    <h1>
+                        Settings
+                    </h1>
+
+                    <p>
+                        Manage your account preferences and learning settings.
+                    </p>
+
+                </section>
+
+
+                <!-- =================================================
+                     NOTIFICATION SETTINGS
+                     ================================================= -->
+
+                <section class="settings-card">
+
+                    <div class="settings-card-header">
+
+                        <div class="settings-icon">
+                            <i class="fa-regular fa-bell"></i>
+                        </div>
+
+                        <div>
+
+                            <h2>
+                                Notifications
+                            </h2>
+
+                            <p>
+                                Choose which notifications you want to receive.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="settings-list">
+
+
+                        <div class="setting-item">
+
+                            <div class="setting-text">
+
+                                <strong>
+                                    Email Notifications
+                                </strong>
+
+                                <span>
+                                    Receive important LMS notifications by email.
+                                </span>
+
+                            </div>
+
+
+                            <label class="toggle">
+
+                                <input
+                                    type="checkbox"
+                                    id="emailNotifications"
+                                >
+
+                                <span class="toggle-slider"></span>
+
+                            </label>
+
+                        </div>
+
+
+                        <div class="setting-item">
+
+                            <div class="setting-text">
+
+                                <strong>
+                                    Assignment Reminders
+                                </strong>
+
+                                <span>
+                                    Get reminders about upcoming assignment deadlines.
+                                </span>
+
+                            </div>
+
+
+                            <label class="toggle">
+
+                                <input
+                                    type="checkbox"
+                                    id="assignmentReminders"
+                                >
+
+                                <span class="toggle-slider"></span>
+
+                            </label>
+
+                        </div>
+
+
+                        <div class="setting-item">
+
+                            <div class="setting-text">
+
+                                <strong>
+                                    Course Updates
+                                </strong>
+
+                                <span>
+                                    Receive updates when course content changes.
+                                </span>
+
+                            </div>
+
+
+                            <label class="toggle">
+
+                                <input
+                                    type="checkbox"
+                                    id="courseUpdates"
+                                >
+
+                                <span class="toggle-slider"></span>
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =================================================
+                     LEARNING PREFERENCES
+                     ================================================= -->
+
+                <section class="settings-card">
+
+                    <div class="settings-card-header">
+
+                        <div class="settings-icon">
+                            <i class="fa-solid fa-book-open"></i>
+                        </div>
+
+                        <div>
+
+                            <h2>
+                                Learning Preferences
+                            </h2>
+
+                            <p>
+                                Customize your learning experience.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="settings-list">
+
+
+                        <div class="setting-item">
+
+                            <div class="setting-text">
+
+                                <strong>
+                                    Daily Learning Reminder
+                                </strong>
+
+                                <span>
+                                    Receive a reminder to continue your learning.
+                                </span>
+
+                            </div>
+
+
+                            <label class="toggle">
+
+                                <input
+                                    type="checkbox"
+                                    id="learningReminder"
+                                >
+
+                                <span class="toggle-slider"></span>
+
+                            </label>
+
+                        </div>
+
+
+                        <div class="setting-item">
+
+                            <div class="setting-text">
+
+                                <strong>
+                                    Show Completed Courses
+                                </strong>
+
+                                <span>
+                                    Display completed courses in My Courses.
+                                </span>
+
+                            </div>
+
+
+                            <label class="toggle">
+
+                                <input
+                                    type="checkbox"
+                                    id="showCompletedCourses"
+                                >
+
+                                <span class="toggle-slider"></span>
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =================================================
+                     APPEARANCE
+                     ================================================= -->
+
+                <section class="settings-card">
+
+                    <div class="settings-card-header">
+
+                        <div class="settings-icon">
+                            <i class="fa-solid fa-palette"></i>
+                        </div>
+
+                        <div>
+
+                            <h2>
+                                Appearance
+                            </h2>
+
+                            <p>
+                                Choose how the LMS interface should look.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="appearance-setting">
+
+                        <div>
+
+                            <strong>
+                                Theme
+                            </strong>
+
+                            <span>
+                                Select your preferred interface theme.
+                            </span>
+
+                        </div>
+
+
+                        <select id="themeSelect">
+
+                            <option value="light">
+                                Light
+                            </option>
+
+                            <option value="dark">
+                                Dark
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =================================================
+                     ACCOUNT
+                     ================================================= -->
+
+                <section class="settings-card">
+
+                    <div class="settings-card-header">
+
+                        <div class="settings-icon">
+                            <i class="fa-solid fa-user-gear"></i>
+                        </div>
+
+                        <div>
+
+                            <h2>
+                                Account
+                            </h2>
+
+                            <p>
+                                Manage your LMS account.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="account-actions">
+
+                        <a
+                            href="profile.html"
+                            class="settings-action-button"
+                        >
+
+                            <i class="fa-regular fa-user"></i>
+
+                            <span>
+                                View Profile
+                            </span>
+
+                        </a>
+
+
+                        <button
+                            type="button"
+                            class="settings-action-button danger"
+                            id="settingsLogoutButton"
+                        >
+
+                            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+
+                            <span>
+                                Logout
+                            </span>
+
+                        </button>
+
+                    </div>
+
+                </section>
+
+
+                <!-- Save Message -->
+
+                <div
+                    id="settingsMessage"
+                    class="settings-message"
+                ></div>
+
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <!-- =====================================================
+         MOBILE SIDEBAR OVERLAY
+         ===================================================== -->
+
+    <div
+        class="sidebar-overlay hidden"
+        id="sidebarOverlay"
+    ></div>
+
+
+    <!-- JavaScript -->
+
+    <script src="js/api.js"></script>
+
+    <script src="js/ui.js"></script>
+
+    <script src="js/settings.js"></script>
+
+</body>
+
+</html>

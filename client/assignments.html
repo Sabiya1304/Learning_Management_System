@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Assignments | LMS</title>
+
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+</head>
+
+<body>
+
+<div class="app-layout">
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-header">
+            <div class="logo">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span>LMS</span>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <!-- Dashboard -->
+            <a href="student.html" class="nav-item">
+                <i class="fa-solid fa-house"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <!-- All Courses -->
+            <a href="courses.html" class="nav-item">
+                <i class="fa-solid fa-book-open"></i>
+                <span>All Courses</span>
+            </a>
+
+            <!-- My Courses -->
+            <a href="my-courses.html" class="nav-item">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span>My Courses</span>
+            </a>
+
+            <!-- Assignments -->
+            <a href="assignments.html" class="nav-item active">
+                <i class="fa-solid fa-file-lines"></i>
+                <span>Assignments</span>
+            </a>
+
+            <!-- Profile -->
+            <a href="profile.html" class="nav-item" id="profileNav">
+                <i class="fa-solid fa-user"></i>
+                <span>Profile</span>
+            </a>
+
+            <!-- Settings -->
+            <a href="settings.html" class="nav-item" id="settingsNav">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+
+        </nav>
+
+        <!-- Sidebar Footer -->
+        <div class="sidebar-footer">
+
+            <button class="nav-item logout-button" id="logoutButton">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =========================
+         MOBILE SIDEBAR OVERLAY
+    ========================== -->
+    <div class="sidebar-overlay hidden" id="sidebarOverlay"></div>
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+    <main class="main-content">
+
+        <!-- Top Header -->
+        <header class="top-header">
+
+            <button
+                class="mobile-menu-button"
+                id="mobileMenuButton"
+                type="button"
+            >
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <div class="header-spacer"></div>
+
+            <div class="header-user">
+
+                <div class="user-avatar" id="userAvatar">
+                    S
+                </div>
+
+                <span id="headerUserName">
+                    Student
+                </span>
+
+            </div>
+
+        </header>
+
+
+        <!-- =========================
+             PAGE CONTENT
+        ========================== -->
+        <section class="page-content">
+
+            <!-- Page Header -->
+            <div class="page-header">
+
+                <div>
+
+                    <span class="page-eyebrow">
+                        LEARNING TASKS
+                    </span>
+
+                    <h1>
+                        Assignments
+                    </h1>
+
+                    <p>
+                        View your assignments, deadlines, submissions and results.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 ASSIGNMENT STATS
+            ========================== -->
+            <section class="assignment-stats-grid">
+
+                <!-- Total -->
+                <div class="assignment-stat-card">
+
+                    <div class="assignment-stat-icon">
+                        <i class="fa-solid fa-file-lines"></i>
+                    </div>
+
+                    <div>
+                        <span class="assignment-stat-label">
+                            Total Assignments
+                        </span>
+
+                        <strong id="totalAssignments">
+                            0
+                        </strong>
+                    </div>
+
+                </div>
+
+
+                <!-- Pending -->
+                <div class="assignment-stat-card">
+
+                    <div class="assignment-stat-icon">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+
+                    <div>
+                        <span class="assignment-stat-label">
+                            Pending
+                        </span>
+
+                        <strong id="pendingAssignments">
+                            0
+                        </strong>
+                    </div>
+
+                </div>
+
+
+                <!-- Submitted -->
+                <div class="assignment-stat-card">
+
+                    <div class="assignment-stat-icon">
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </div>
+
+                    <div>
+                        <span class="assignment-stat-label">
+                            Submitted
+                        </span>
+
+                        <strong id="submittedAssignments">
+                            0
+                        </strong>
+                    </div>
+
+                </div>
+
+
+                <!-- Evaluated -->
+                <div class="assignment-stat-card">
+
+                    <div class="assignment-stat-icon">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+
+                    <div>
+                        <span class="assignment-stat-label">
+                            Evaluated
+                        </span>
+
+                        <strong id="evaluatedAssignments">
+                            0
+                        </strong>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 ASSIGNMENTS SECTION
+            ========================== -->
+            <section class="assignments-section">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <h2>
+                            Your Assignments
+                        </h2>
+
+                        <p>
+                            Complete your assignments before the deadline.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Assignment Cards Container -->
+                <div
+                    class="assignments-grid"
+                    id="assignmentsContainer"
+                >
+
+                    <!-- Loading State -->
+                    <div class="assignments-loading">
+
+                        <span class="spinner"></span>
+
+                        <span>
+                            Loading assignments...
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================== -->
+
+<script src="js/api.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/assignments.js"></script>
+
+</body>
+</html>

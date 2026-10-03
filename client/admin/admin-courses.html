@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Courses | LMS Admin</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="admin-page"
+
+    <div class="app-layout">
+
+        <!-- =========================
+             SIDEBAR
+        ========================== -->
+
+        <aside class="sidebar">
+
+            <div class="sidebar-logo">
+                <h2>LMS</h2>
+                <span>Admin Panel</span>
+            </div>
+
+
+            <nav class="sidebar-nav">
+
+                <a href="admin.html" class="nav-item">
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="admin-courses.html" class="nav-item active">
+                    <span>Courses</span>
+                </a>
+
+                <a href="admin-modules.html" class="nav-item">
+                    <span>Modules</span>
+                </a>
+
+                <a href="admin-assignments.html" class="nav-item">
+                    <span>Assignments</span>
+                </a>
+
+                <a href="admin-students.html" class="nav-item" id="studentsNav">
+                    <span>Students</span>
+                </a>
+
+                <a href="admin-submissions.html" class="nav-item" id="submissionsNav">
+                    <span>Submissions</span>
+                </a>
+
+                <a href="admin-profile.html" class="nav-item" id="profileNav">
+                    <span>Profile</span>
+                </a>
+
+            </nav>
+
+
+            <div class="sidebar-bottom">
+
+                <button
+                    type="button"
+                    class="nav-item logout-btn"
+                    id="logoutBtn"
+                >
+                    <span>Logout</span>
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- =========================
+             MAIN CONTENT
+        ========================== -->
+
+        <main class="main-content">
+
+            <!-- Page Header -->
+
+            <header class="page-header">
+
+                <div>
+
+                    <p class="page-eyebrow">
+                        ADMINISTRATION
+                    </p>
+
+                    <h1>Courses</h1>
+
+                    <p class="page-description">
+                        Create and manage courses available on the LMS.
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="header-user"
+                    id="headerUser"
+                >
+                    Admin
+                </div>
+
+            </header>
+
+
+            <!-- =========================
+                 COURSE MANAGEMENT
+            ========================== -->
+
+            <section class="content-section">
+
+
+                <!-- Course Section Header -->
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <h2>All Courses</h2>
+
+                        <p>
+                            Manage your courses, course details and instructors.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="btn btn-primary"
+                        id="createCourseBtn"
+                    >
+                        + Create Course
+                    </button>
+
+                </div>
+
+
+                <!-- Courses Container -->
+
+                <div
+                    id="coursesContainer"
+                    class="courses-container"
+                >
+
+                    <div class="loading-state">
+                        Loading courses...
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- =========================
+         CREATE / EDIT COURSE MODAL
+    ========================== -->
+
+    <div
+        class="modal-overlay"
+        id="courseModal"
+        hidden
+    >
+
+        <div class="modal-card">
+
+
+            <!-- Modal Header -->
+
+            <div class="modal-header">
+
+                <div>
+
+                    <p class="page-eyebrow">
+                        COURSE
+                    </p>
+
+                    <h2 id="modalTitle">
+                        Create Course
+                    </h2>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="modal-close"
+                    id="closeModalBtn"
+                    aria-label="Close"
+                >
+                    &times;
+                </button>
+
+            </div>
+
+
+            <!-- Course Form -->
+
+            <form id="courseForm">
+
+                <input
+                    type="hidden"
+                    id="courseId"
+                >
+
+
+                <!-- Course Title -->
+
+                <div class="form-group">
+
+                    <label for="courseTitle">
+                        Course Title
+                    </label>
+
+                    <input
+                        type="text"
+                        id="courseTitle"
+                        placeholder="Enter course title"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Description -->
+
+                <div class="form-group">
+
+                    <label for="courseDescription">
+                        Description
+                    </label>
+
+                    <textarea
+                        id="courseDescription"
+                        rows="4"
+                        placeholder="Enter course description"
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <!-- Category -->
+
+                <div class="form-group">
+
+                    <label for="courseCategory">
+                        Category
+                    </label>
+
+                    <input
+                        type="text"
+                        id="courseCategory"
+                        placeholder="Example: Programming"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Duration + Difficulty -->
+
+                <div class="form-row">
+
+
+                    <div class="form-group">
+
+                        <label for="courseDuration">
+                            Duration
+                        </label>
+
+                        <input
+                            type="text"
+                            id="courseDuration"
+                            placeholder="Example: 8 Weeks"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="courseDifficulty">
+                            Difficulty
+                        </label>
+
+                        <select
+                            id="courseDifficulty"
+                            required
+                        >
+
+                            <option value="">
+                                Select difficulty
+                            </option>
+
+                            <option value="Beginner">
+                                Beginner
+                            </option>
+
+                            <option value="Intermediate">
+                                Intermediate
+                            </option>
+
+                            <option value="Advanced">
+                                Advanced
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Course Image -->
+
+                <div class="form-group">
+
+                    <label for="courseImage">
+                        Course Image URL
+                    </label>
+
+                    <input
+                        type="url"
+                        id="courseImage"
+                        placeholder="https://example.com/course-image.jpg"
+                    >
+
+                    <small>
+                        Optional. You can add an image URL later.
+                    </small>
+
+                </div>
+
+
+                <!-- Form Message -->
+
+                <div
+                    id="formMessage"
+                    class="form-message"
+                    hidden
+                ></div>
+
+
+                <!-- Modal Actions -->
+
+                <div class="modal-actions">
+
+                    <button
+                        type="button"
+                        class="btn btn-secondary"
+                        id="cancelModalBtn"
+                    >
+                        Cancel
+                    </button>
+
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary"
+                        id="saveCourseBtn"
+                    >
+                        Save Course
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script src="../js/api.js"></script>
+    <script src="../js/ui.js"></script>
+    <script src="js/admin-courses.js"></script>
+
+</body>
+</html>

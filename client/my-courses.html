@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<meta
+    name="description"
+    content="LMS Student My Courses"
+>
+
+<title>LMS | My Courses</title>
+
+<!-- Inter Font -->
+<link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+>
+
+<!-- Font Awesome -->
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+>
+
+<!-- Main CSS -->
+<link
+    rel="stylesheet"
+    href="css/style.css"
+>
+
+</head>
+
+<body class="dashboard-body">
+
+<!-- =====================================================
+     APP LAYOUT
+     ===================================================== -->
+
+<div class="app-layout">
+
+
+    <!-- =================================================
+         SIDEBAR
+         ================================================= -->
+
+    <aside
+        class="sidebar"
+        id="sidebar"
+    >
+
+
+        <!-- Logo -->
+
+        <div class="sidebar-logo">
+
+            <div class="logo-mark">
+
+                <i class="fa-solid fa-graduation-cap"></i>
+
+            </div>
+
+            <span>
+                LMS
+            </span>
+
+        </div>
+
+
+        <!-- Navigation -->
+
+        <nav class="sidebar-nav">
+
+
+            <p class="nav-section-title">
+                MAIN
+            </p>
+
+
+            <a
+                href="student.html"
+                class="nav-item"
+            >
+
+                <i class="fa-solid fa-grid-2"></i>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <a
+                href="my-courses.html"
+                class="nav-item active"
+                id="myCoursesNav"
+            >
+
+                <i class="fa-solid fa-book-open"></i>
+
+                <span>
+                    My Courses
+                </span>
+
+            </a>
+
+
+            <a
+                href="assignments.html"
+                class="nav-item"
+                id="assignmentsNav"
+            >
+
+                <i class="fa-solid fa-file-lines"></i>
+
+                <span>
+                    Assignments
+                </span>
+
+            </a>
+
+
+            <p class="nav-section-title nav-section-spaced">
+                ACCOUNT
+            </p>
+
+
+            <a
+                href="#"
+                class="nav-item"
+                id="profileNav"
+            >
+
+                <i class="fa-regular fa-user"></i>
+
+                <span>
+                    Profile
+                </span>
+
+            </a>
+
+
+            <a
+                href="#"
+                class="nav-item"
+                id="settingsNav"
+            >
+
+                <i class="fa-solid fa-gear"></i>
+
+                <span>
+                    Settings
+                </span>
+
+            </a>
+
+        </nav>
+
+
+        <!-- Sidebar Bottom -->
+
+        <div class="sidebar-bottom">
+
+
+            <div class="sidebar-help">
+
+                <div class="help-icon">
+
+                    <i class="fa-regular fa-circle-question"></i>
+
+                </div>
+
+                <div>
+
+                    <strong>
+                        Need help?
+                    </strong>
+
+                    <span>
+                        We're here for you.
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="logout-button"
+                id="logoutButton"
+            >
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                <span>
+                    Logout
+                </span>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =================================================
+         MOBILE SIDEBAR OVERLAY
+         ================================================= -->
+
+    <div
+        class="sidebar-overlay hidden"
+        id="sidebarOverlay"
+    ></div>
+
+
+
+    <!-- =================================================
+         MAIN CONTENT
+         ================================================= -->
+
+    <main class="main-content">
+
+
+        <!-- Top Header -->
+
+        <header class="top-header">
+
+
+            <button
+                class="mobile-menu-button"
+                id="mobileMenuButton"
+                aria-label="Open menu"
+            >
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+
+            <div class="header-spacer"></div>
+
+
+            <div class="header-actions">
+
+
+                <button
+                    class="icon-button"
+                    id="notificationButton"
+                    aria-label="Notifications"
+                >
+
+                    <i class="fa-regular fa-bell"></i>
+
+                    <span class="notification-dot"></span>
+
+                </button>
+
+
+                <div class="user-menu">
+
+
+                    <div
+                        class="user-avatar"
+                        id="userAvatar"
+                    >
+                        S
+                    </div>
+
+
+                    <div class="user-info">
+
+                        <strong id="headerUserName">
+                            Student
+                        </strong>
+
+                        <span>
+                            Student
+                        </span>
+
+                    </div>
+
+
+                    <i class="fa-solid fa-chevron-down user-chevron"></i>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =================================================
+             PAGE CONTENT
+             ================================================= -->
+
+        <div class="page-content">
+
+
+            <!-- Page Header -->
+
+            <section class="welcome-section">
+
+
+                <div>
+
+                    <p class="welcome-label">
+                        LEARNING
+                    </p>
+
+
+                    <h1>
+                        My Courses
+                    </h1>
+
+
+                    <p class="welcome-description">
+                        Continue learning from your enrolled courses
+                        and track your progress.
+                    </p>
+
+                </div>
+
+
+                <div class="welcome-decoration">
+
+                    <i class="fa-solid fa-book-open"></i>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 COURSE SUMMARY
+                 ================================================= -->
+
+            <section class="stats-grid">
+
+
+                <!-- Total Courses -->
+
+                <div class="stat-card">
+
+
+                    <div class="stat-icon stat-icon-blue">
+
+                        <i class="fa-solid fa-book-open"></i>
+
+                    </div>
+
+
+                    <div class="stat-content">
+
+                        <span>
+                            My Courses
+                        </span>
+
+
+                        <strong id="totalCourses">
+                            0
+                        </strong>
+
+
+                        <small>
+                            Enrolled courses
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- In Progress -->
+
+                <div class="stat-card">
+
+
+                    <div class="stat-icon stat-icon-purple">
+
+                        <i class="fa-solid fa-chart-simple"></i>
+
+                    </div>
+
+
+                    <div class="stat-content">
+
+                        <span>
+                            In Progress
+                        </span>
+
+
+                        <strong id="inProgressCourses">
+                            0
+                        </strong>
+
+
+                        <small>
+                            Courses you're learning
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Completed -->
+
+                <div class="stat-card">
+
+
+                    <div class="stat-icon stat-icon-green">
+
+                        <i class="fa-solid fa-circle-check"></i>
+
+                    </div>
+
+
+                    <div class="stat-content">
+
+                        <span>
+                            Completed
+                        </span>
+
+
+                        <strong id="completedCourses">
+                            0
+                        </strong>
+
+
+                        <small>
+                            Courses completed
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Average Progress -->
+
+                <div class="stat-card">
+
+
+                    <div class="stat-icon stat-icon-orange">
+
+                        <i class="fa-solid fa-chart-line"></i>
+
+                    </div>
+
+
+                    <div class="stat-content">
+
+                        <span>
+                            Average Progress
+                        </span>
+
+
+                        <strong id="averageProgress">
+                            0%
+                        </strong>
+
+
+                        <small>
+                            Across your courses
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 COURSES
+                 ================================================= -->
+
+            <section class="dashboard-card my-courses-card">
+
+
+                <div class="card-header">
+
+
+                    <div>
+
+                        <h2>
+                            Enrolled Courses
+                        </h2>
+
+
+                        <p>
+                            Pick a course and continue your learning.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- Course Container -->
+
+                <div id="myCoursesContainer">
+
+
+                    <div class="dashboard-loading">
+
+                        <span class="spinner"></span>
+
+                        <span>
+                            Loading your courses...
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 LEARNING TIP
+                 ================================================= -->
+
+            <section class="learning-tip">
+
+
+                <div class="tip-icon">
+
+                    <i class="fa-solid fa-lightbulb"></i>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        Keep learning
+                    </strong>
+
+
+                    <p>
+                        Complete your course modules regularly
+                        to keep your progress moving forward.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+        </div>
+
+    </main>
+
+</div>
+
+
+
+<!-- =====================================================
+     SUCCESS MODAL
+     ===================================================== -->
+
+<div
+    id="successModal"
+    class="modal-overlay hidden"
+>
+
+    <div class="modal">
+
+
+        <div class="success-icon">
+
+            <i class="fa-solid fa-check"></i>
+
+        </div>
+
+
+        <h3 id="successTitle">
+            Success!
+        </h3>
+
+
+        <p id="successMessage">
+            Your action was completed successfully.
+        </p>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+     ===================================================== -->
+
+<script src="js/api.js"></script>
+
+<script src="js/ui.js"></script>
+
+<script src="js/my-courses.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>All Courses | LMS</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+</head>
+
+<body>
+
+    <div class="app-layout">
+
+        <!-- =========================================
+             SIDEBAR
+        ========================================== -->
+
+        <aside class="sidebar" id="sidebar">
+
+            <div class="sidebar-header">
+
+                <div class="logo">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <span>LMS</span>
+                </div>
+
+            </div>
+
+
+            <nav class="sidebar-nav">
+
+                <a href="student.html" class="nav-item">
+
+                    <i class="fa-solid fa-house"></i>
+
+                    <span>Dashboard</span>
+
+                </a>
+
+
+                <a href="courses.html" class="nav-item active">
+
+                    <i class="fa-solid fa-book-open"></i>
+
+                    <span>All Courses</span>
+
+                </a>
+
+
+                <a href="my-courses.html" class="nav-item">
+
+                    <i class="fa-solid fa-graduation-cap"></i>
+
+                    <span>My Courses</span>
+
+                </a>
+
+
+                <a href="assignments.html" class="nav-item" id="assignmentsNav">
+
+                    <i class="fa-solid fa-file-lines"></i>
+
+                    <span>Assignments</span>
+
+                </a>
+
+
+                <a href="profile.html" class="nav-item" id="profileNav">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    <span>Profile</span>
+
+                </a>
+
+
+                <a href="settings.html" class="nav-item" id="settingsNav">
+
+                    <i class="fa-solid fa-gear"></i>
+
+                    <span>Settings</span>
+
+                </a>
+
+            </nav>
+
+
+            <div class="sidebar-footer">
+
+                <button
+                    class="nav-item logout-button"
+                    id="logoutButton"
+                >
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                    <span>Logout</span>
+
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- =========================================
+             MOBILE OVERLAY
+        ========================================== -->
+
+        <div
+            class="sidebar-overlay hidden"
+            id="sidebarOverlay"
+        ></div>
+
+
+        <!-- =========================================
+             MAIN CONTENT
+        ========================================== -->
+
+        <main class="main-content">
+
+
+            <!-- HEADER -->
+
+            <header class="top-header">
+
+                <button
+                    class="mobile-menu-button"
+                    id="mobileMenuButton"
+                >
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+
+                <div class="header-spacer"></div>
+
+
+                <div class="header-user">
+
+                    <div
+                        class="user-avatar"
+                        id="userAvatar"
+                    >
+                        S
+                    </div>
+
+                    <span id="headerUserName">
+                        Student
+                    </span>
+
+                </div>
+
+            </header>
+
+
+            <!-- =====================================
+                 PAGE CONTENT
+            ====================================== -->
+
+            <section class="page-content">
+
+
+                <!-- PAGE INTRO -->
+
+                <div class="page-header">
+
+                    <div>
+
+                        <span class="page-eyebrow">
+                            LEARNING LIBRARY
+                        </span>
+
+                        <h1>
+                            All Courses
+                        </h1>
+
+                        <p>
+                            Explore available courses and start learning.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================
+                     COURSE CONTAINER
+                ================================== -->
+
+                <section class="courses-section">
+
+                    <div
+                        class="courses-grid"
+                        id="coursesContainer"
+                    >
+
+                        <!-- Courses will load here -->
+
+                        <div class="dashboard-loading">
+
+                            <span class="spinner"></span>
+
+                            <span>
+                                Loading courses...
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script src="js/api.js"></script>
+
+    <script src="js/ui.js"></script>
+
+    <script src="js/courses.js"></script>
+
+</body>
+
+</html>

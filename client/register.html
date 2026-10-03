@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="LMS - Create your learning account"
+    >
+
+    <title>LMS | Create Account</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+</head>
+
+
+<body>
+
+    <main class="auth-page">
+
+
+        <!-- =================================================
+             BRAND SECTION
+             ================================================= -->
+
+        <section class="auth-brand">
+
+            <div class="brand-content">
+
+
+                <!-- Logo -->
+
+                <div class="brand-logo">
+
+                    <div class="logo-mark">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+
+                    <span>LMS</span>
+
+                </div>
+
+
+                <!-- Main Message -->
+
+                <div class="brand-message">
+
+                    <span class="brand-badge">
+
+                        <i class="fa-solid fa-sparkles"></i>
+
+                        Start learning
+
+                    </span>
+
+
+                    <h1>
+
+                        Build your skills.
+
+                        <span>Grow your future.</span>
+
+                    </h1>
+
+
+                    <p>
+
+                        Create your LMS account and start
+                        learning through courses, modules,
+                        assignments and progress tracking.
+
+                    </p>
+
+                </div>
+
+
+                <!-- Features -->
+
+                <div class="brand-features">
+
+
+                    <div class="brand-feature">
+
+                        <div class="feature-icon">
+
+                            <i class="fa-solid fa-book-open"></i>
+
+                        </div>
+
+                        <div>
+
+                            <strong>Learn at your pace</strong>
+
+                            <span>
+                                Access courses and learning materials.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="brand-feature">
+
+                        <div class="feature-icon">
+
+                            <i class="fa-solid fa-list-check"></i>
+
+                        </div>
+
+                        <div>
+
+                            <strong>Practice & submit</strong>
+
+                            <span>
+                                Complete assignments and submit your work.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="brand-feature">
+
+                        <div class="feature-icon">
+
+                            <i class="fa-solid fa-chart-line"></i>
+
+                        </div>
+
+                        <div>
+
+                            <strong>Track your progress</strong>
+
+                            <span>
+                                See your learning journey clearly.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             REGISTRATION SECTION
+             ================================================= -->
+
+        <section class="auth-form-section">
+
+            <div class="auth-form-container">
+
+
+                <!-- Mobile Logo -->
+
+                <div class="mobile-logo">
+
+                    <div class="logo-mark">
+
+                        <i class="fa-solid fa-graduation-cap"></i>
+
+                    </div>
+
+                    <span>LMS</span>
+
+                </div>
+
+
+
+                <!-- Heading -->
+
+                <div class="auth-heading">
+
+                    <h2>Create your account ✨</h2>
+
+                    <p>
+                        Join LMS and start your learning journey.
+                    </p>
+
+                </div>
+
+
+
+                <!-- Registration Form -->
+
+                <form
+                    id="registerForm"
+                    novalidate
+                >
+
+
+                    <!-- Name -->
+
+                    <div class="form-group">
+
+                        <label
+                            for="name"
+                            class="form-label"
+                        >
+                            Full name
+                        </label>
+
+
+                        <div class="input-wrapper">
+
+                            <i
+                                class="fa-regular fa-user input-icon"
+                            ></i>
+
+
+                            <input
+                                type="text"
+                                id="name"
+                                class="form-input input-with-icon"
+                                placeholder="Enter your full name"
+                                autocomplete="name"
+                            >
+
+                        </div>
+
+
+                        <small
+                            id="nameError"
+                            class="field-error"
+                        ></small>
+
+                    </div>
+
+
+
+                    <!-- Email -->
+
+                    <div class="form-group">
+
+                        <label
+                            for="registerEmail"
+                            class="form-label"
+                        >
+                            Email address
+                        </label>
+
+
+                        <div class="input-wrapper">
+
+                            <i
+                                class="fa-regular fa-envelope input-icon"
+                            ></i>
+
+
+                            <input
+                                type="email"
+                                id="registerEmail"
+                                class="form-input input-with-icon"
+                                placeholder="Enter your email"
+                                autocomplete="email"
+                            >
+
+                        </div>
+
+
+                        <small
+                            id="registerEmailError"
+                            class="field-error"
+                        ></small>
+
+                    </div>
+
+
+
+                    <!-- Password -->
+
+                    <div class="form-group">
+
+                        <label
+                            for="registerPassword"
+                            class="form-label"
+                        >
+                            Password
+                        </label>
+
+
+                        <div class="input-wrapper">
+
+                            <i
+                                class="fa-solid fa-lock input-icon"
+                            ></i>
+
+
+                            <input
+                                type="password"
+                                id="registerPassword"
+                                class="form-input input-with-icon password-input"
+                                placeholder="Create a password"
+                                autocomplete="new-password"
+                            >
+
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                id="registerPasswordToggle"
+                                aria-label="Show password"
+                            >
+
+                                <i class="fa-regular fa-eye"></i>
+
+                            </button>
+
+                        </div>
+
+
+                        <small
+                            id="registerPasswordError"
+                            class="field-error"
+                        ></small>
+
+                    </div>
+
+
+
+                    <!-- Confirm Password -->
+
+                    <div class="form-group">
+
+                        <label
+                            for="confirmPassword"
+                            class="form-label"
+                        >
+                            Confirm password
+                        </label>
+
+
+                        <div class="input-wrapper">
+
+                            <i
+                                class="fa-solid fa-lock input-icon"
+                            ></i>
+
+
+                            <input
+                                type="password"
+                                id="confirmPassword"
+                                class="form-input input-with-icon password-input"
+                                placeholder="Re-enter your password"
+                                autocomplete="new-password"
+                            >
+
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                id="confirmPasswordToggle"
+                                aria-label="Show password"
+                            >
+
+                                <i class="fa-regular fa-eye"></i>
+
+                            </button>
+
+                        </div>
+
+
+                        <small
+                            id="confirmPasswordError"
+                            class="field-error"
+                        ></small>
+
+                    </div>
+
+
+
+                    <!-- General Message -->
+
+                    <div
+                        id="registerMessage"
+                        class="message message-error hidden"
+                    ></div>
+
+
+
+                    <!-- Register Button -->
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary auth-submit"
+                        id="registerButton"
+                    >
+
+                        <span>
+                            Create Account
+                        </span>
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </button>
+
+
+                </form>
+
+
+
+                <!-- Login Link -->
+
+                <div class="auth-switch">
+
+                    <span>
+                        Already have an account?
+                    </span>
+
+                    <a href="index.html">
+                        Sign in
+                    </a>
+
+                </div>
+
+
+
+                <!-- Footer -->
+
+                <p class="auth-footer">
+
+                    By creating an account, you agree to use
+                    this learning platform responsibly.
+
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         SUCCESS MODAL
+         ===================================================== -->
+
+    <div
+        id="successModal"
+        class="modal-overlay hidden"
+    >
+
+        <div class="modal">
+
+            <div class="success-icon">
+
+                <i class="fa-solid fa-check"></i>
+
+            </div>
+
+
+            <h3 id="successTitle">
+                Account created!
+            </h3>
+
+
+            <p id="successMessage">
+
+                Your account was created successfully.
+                Taking you to the login page...
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- JavaScript -->
+
+    <script src="js/api.js"></script>
+
+    <script src="js/ui.js"></script>
+
+    <script src="js/register.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Submissions | LMS Admin</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+
+<body class="admin-page">
+
+    <div class="app-layout">
+
+
+        <!-- =========================================
+             SIDEBAR
+        ========================================== -->
+
+        <aside class="sidebar">
+
+            <div class="sidebar-logo">
+
+                <h2>LMS</h2>
+
+                <span>
+                    Admin Panel
+                </span>
+
+            </div>
+
+
+            <nav class="sidebar-nav">
+
+                <a
+                    href="admin.html"
+                    class="nav-item"
+                >
+                    <span>
+                        Dashboard
+                    </span>
+                </a>
+
+
+                <a
+                    href="admin-courses.html"
+                    class="nav-item"
+                >
+                    <span>
+                        Courses
+                    </span>
+                </a>
+
+
+                <a
+                    href="admin-modules.html"
+                    class="nav-item"
+                >
+                    <span>
+                        Modules
+                    </span>
+                </a>
+
+
+                <a
+                    href="admin-assignments.html"
+                    class="nav-item"
+                >
+                    <span>
+                        Assignments
+                    </span>
+                </a>
+
+
+                <a
+                    href="admin-students.html"
+                    class="nav-item"
+                >
+                    <span>
+                        Students
+                    </span>
+                </a>
+
+
+                <a
+                    href="admin-submissions.html"
+                    class="nav-item active"
+                    id="submissionsNav"
+                >
+                    <span>
+                        Submissions
+                    </span>
+                </a>
+
+
+                <a
+                    href="admin-profile.html"
+                    class="nav-item"
+                    id="profileNav"
+                >
+                    <span>
+                        Profile
+                    </span>
+                </a>
+
+            </nav>
+
+
+            <div class="sidebar-bottom">
+
+                <button
+                    type="button"
+                    class="nav-item logout-btn"
+                    id="logoutBtn"
+                >
+                    <span>
+                        Logout
+                    </span>
+                </button>
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- =========================================
+             MAIN CONTENT
+        ========================================== -->
+
+        <main class="main-content">
+
+
+            <!-- Page Header -->
+
+            <header class="page-header">
+
+                <div>
+
+                    <p class="page-eyebrow">
+                        ADMINISTRATION
+                    </p>
+
+                    <h1>
+                        Submissions
+                    </h1>
+
+                    <p class="page-description">
+                        Review and evaluate student assignment submissions.
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="header-user"
+                    id="headerUser"
+                >
+                    Admin
+                </div>
+
+            </header>
+
+
+
+            <!-- =========================================
+                 CONTENT
+            ========================================== -->
+
+            <section class="content-section">
+
+
+                <!-- Statistics -->
+
+                <div class="submission-stats">
+
+
+                    <div class="submission-stat-card">
+
+                        <div class="submission-stat-icon">
+                            #
+                        </div>
+
+                        <div>
+
+                            <span class="submission-stat-label">
+                                Total Submissions
+                            </span>
+
+                            <strong id="totalSubmissions">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="submission-stat-card">
+
+                        <div class="submission-stat-icon pending">
+                            !
+                        </div>
+
+                        <div>
+
+                            <span class="submission-stat-label">
+                                Pending Evaluation
+                            </span>
+
+                            <strong id="pendingSubmissions">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="submission-stat-card">
+
+                        <div class="submission-stat-icon evaluated">
+                            ✓
+                        </div>
+
+                        <div>
+
+                            <span class="submission-stat-label">
+                                Evaluated
+                            </span>
+
+                            <strong id="evaluatedSubmissions">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="submission-stat-card">
+
+                        <div class="submission-stat-icon late">
+                            !
+                        </div>
+
+                        <div>
+
+                            <span class="submission-stat-label">
+                                Late
+                            </span>
+
+                            <strong id="lateSubmissions">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- Submissions Section -->
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <h2>
+                            Student Submissions
+                        </h2>
+
+                        <p>
+                            Review submitted assignments and provide feedback.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Message -->
+
+                <div
+                    id="submissionsMessage"
+                    class="message hidden"
+                >
+                </div>
+
+
+
+                <!-- Loading / Submission List -->
+
+                <div
+                    id="submissionsList"
+                    class="submissions-container"
+                >
+
+                    <div class="loading-state">
+                        Loading submissions...
+                    </div>
+
+                </div>
+
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+
+    <!-- =========================================
+         VIEW SUBMISSION MODAL
+    ========================================== -->
+
+    <div
+        id="submissionModal"
+        class="modal-overlay"
+        hidden
+    >
+
+        <div class="modal-card modal-lg">
+
+
+            <div class="modal-header">
+
+                <div>
+
+                    <p class="page-eyebrow">
+                        SUBMISSION DETAILS
+                    </p>
+
+                    <h2>
+                        Submission Details
+                    </h2>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="modal-close"
+                    id="closeSubmissionModal"
+                    aria-label="Close"
+                >
+                    &times;
+                </button>
+
+            </div>
+
+
+
+            <div
+                id="submissionDetails"
+                class="modal-body"
+            >
+            </div>
+
+
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="btn btn-secondary"
+                    id="cancelSubmissionModal"
+                >
+                    Close
+                </button>
+
+
+                <button
+                    type="button"
+                    class="btn btn-primary"
+                    id="evaluateFromViewBtn"
+                >
+                    Evaluate Submission
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================================
+         EVALUATE SUBMISSION MODAL
+    ========================================== -->
+
+    <div
+        id="evaluateModal"
+        class="modal-overlay"
+        hidden
+    >
+
+        <div class="modal-card">
+
+
+            <div class="modal-header">
+
+                <div>
+
+                    <p class="page-eyebrow">
+                        EVALUATION
+                    </p>
+
+                    <h2>
+                        Evaluate Submission
+                    </h2>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="modal-close"
+                    id="closeEvaluateModal"
+                    aria-label="Close"
+                >
+                    &times;
+                </button>
+
+            </div>
+
+
+
+            <form id="evaluateForm">
+
+
+                <div class="modal-body">
+
+
+                    <div
+                        id="evaluateMessage"
+                        class="message hidden"
+                    >
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <label for="marks">
+                            Marks
+                        </label>
+
+                        <input
+                            type="number"
+                            id="marks"
+                            name="marks"
+                            min="0"
+                            required
+                            placeholder="Enter marks"
+                        >
+
+                        <small id="maximumMarksText">
+                            Maximum marks: 20
+                        </small>
+
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <label for="feedback">
+                            Feedback
+                        </label>
+
+                        <textarea
+                            id="feedback"
+                            name="feedback"
+                            rows="5"
+                            placeholder="Write feedback for the student..."
+                        ></textarea>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="modal-actions">
+
+
+                    <button
+                        type="button"
+                        class="btn btn-secondary"
+                        id="cancelEvaluateModal"
+                    >
+                        Cancel
+                    </button>
+
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary"
+                        id="saveEvaluationBtn"
+                    >
+                        Save Evaluation
+                    </button>
+
+
+                </div>
+
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Scripts -->
+
+    <script src="../js/api.js"></script>
+
+    <script src="../js/ui.js"></script>
+
+    <script src="js/admin-submissions.js"></script>
+
+
+</body>
+
+</html>
